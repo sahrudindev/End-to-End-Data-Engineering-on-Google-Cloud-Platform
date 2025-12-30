@@ -1,0 +1,4 @@
+# Apache Beam Streaming Pipeline Dependencies
+# =============================================
+
+apache-beam[gcp]>=2.50.0,<3.0.0

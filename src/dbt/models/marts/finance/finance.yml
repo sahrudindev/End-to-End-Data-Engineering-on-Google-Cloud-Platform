@@ -1,0 +1,51 @@
+# =============================================================================
+# Finance Marts Schema & Tests
+# =============================================================================
+
+version: 2
+
+models:
+  - name: dm_daily_revenue
+    description: |
+      Daily revenue aggregations by product category.
+      Used for financial reporting, trend analysis, and executive dashboards.
+      Partitioned by order_date and clustered by product_category.
+    
+    columns:
+      - name: order_date
+        description: "Date of the orders (partition key)"
+        tests:
+          - not_null
+      
+      - name: product_category
+        description: "Product category for the aggregation"
+        tests:
+          - not_null
+      
+      - name: order_count
+        description: "Number of orders on this date for this category"
+        tests:
+          - not_null
+      
+      - name: unique_customers
+        description: "Number of unique customers who ordered"
+        tests:
+          - not_null
+      
+      - name: total_revenue_usd
+        description: "Total revenue in USD for this date/category"
+        tests:
+          - not_null
+      
+      - name: avg_order_value_usd
+        description: "Average order value in USD"
+        tests:
+          - not_null
+      
+      - name: cumulative_revenue_usd
+        description: "Running total of revenue by category"
+        tests:
+          - not_null
+      
+      - name: delivery_rate_pct
+        description: "Percentage of orders that were delivered"

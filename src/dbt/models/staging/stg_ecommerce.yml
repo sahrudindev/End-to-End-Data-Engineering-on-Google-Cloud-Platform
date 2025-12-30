@@ -1,0 +1,62 @@
+# =============================================================================
+# Staging Models Schema & Tests
+# =============================================================================
+
+version: 2
+
+models:
+  - name: stg_ecommerce__events
+    description: |
+      Cleaned and standardized e-commerce events from the raw source.
+      This staging model applies type casting, renames columns for consistency,
+      and adds derived columns for downstream models.
+    
+    columns:
+      - name: order_id
+        description: "Unique identifier for the order (primary key)"
+        tests:
+          - unique
+          - not_null
+      
+      - name: user_id
+        description: "Identifier for the user who placed the order"
+        tests:
+          - not_null
+      
+      - name: status
+        description: "Current status of the order"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['pending', 'processing', 'shipped', 'delivered', 'cancelled']
+      
+      - name: product_category
+        description: "Primary product category of the order"
+        tests:
+          - not_null
+      
+      - name: amount_usd
+        description: "Total order amount in USD"
+        tests:
+          - not_null
+      
+      - name: occurred_at
+        description: "Timestamp when the order event occurred"
+        tests:
+          - not_null
+      
+      - name: order_date
+        description: "Date portion of the order timestamp (for partitioning)"
+        tests:
+          - not_null
+      
+      - name: is_completed
+        description: "Boolean flag indicating if order was successfully delivered"
+      
+      - name: is_cancelled
+        description: "Boolean flag indicating if order was cancelled"
+        tests:
+          - not_null
+      
+      - name: data_source
+        description: "Origin of the data (streaming or batch)"

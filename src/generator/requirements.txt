@@ -1,0 +1,14 @@
+# E-commerce Event Data Generator Dependencies
+# =============================================
+
+# Fake data generation
+faker>=18.0.0,<25.0.0
+
+# Google Cloud Pub/Sub client
+google-cloud-pubsub>=2.18.0,<3.0.0
+
+# Google Cloud Storage client
+google-cloud-storage>=2.10.0,<3.0.0
+
+# Google Cloud Core (for exceptions)
+google-api-core>=2.11.0,<3.0.0

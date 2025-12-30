@@ -1,0 +1,66 @@
+# =============================================================================
+# dbt Project Configuration
+# E-commerce Data Warehouse
+# =============================================================================
+
+name: 'ecommerce_dw'
+version: '1.0.0'
+config-version: 2
+
+# Project paths
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+# Target path for compiled files
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Profile reference (connection settings)
+profile: 'ecommerce_dw'
+
+# =============================================================================
+# Model Configurations
+# =============================================================================
+
+models:
+  ecommerce_dw:
+    # Staging models - always views, close to source
+    staging:
+      +materialized: view
+      +schema: staging
+      +tags: ['staging']
+    
+    # Intermediate models - ephemeral or views
+    intermediate:
+      +materialized: ephemeral
+      +tags: ['intermediate']
+    
+    # Mart models - tables for consumption
+    marts:
+      +materialized: table
+      +tags: ['marts']
+      
+      core:
+        +schema: core
+        +tags: ['core']
+      
+      finance:
+        +schema: finance
+        +tags: ['finance']
+
+# =============================================================================
+# Variables
+# =============================================================================
+
+vars:
+  # Date range for development (limit data scanned)
+  start_date: '2024-01-01'
+  
+  # Valid order statuses
+  valid_order_statuses: ['pending', 'processing', 'shipped', 'delivered']

@@ -1,0 +1,61 @@
+# =============================================================================
+# Source Definition: E-commerce Raw Data
+# =============================================================================
+
+version: 2
+
+sources:
+  - name: ecommerce_raw
+    description: "Raw e-commerce transaction data ingested from streaming and batch pipelines"
+    database: dataengineergcp-482812  # Override if needed
+    schema: ecommerce_dw
+    
+    tables:
+      - name: raw_events
+        description: "Raw transaction events from Pub/Sub streaming and GCS batch ingestion"
+        identifier: raw_events  # Actual table name in BigQuery
+        
+        # Freshness checks
+        loaded_at_field: ingestion_timestamp
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour}
+        
+        columns:
+          - name: order_id
+            description: "Unique identifier for the order"
+            tests:
+              - not_null
+          
+          - name: user_id
+            description: "Identifier for the user who placed the order"
+            tests:
+              - not_null
+          
+          - name: status
+            description: "Current status of the order (pending, processing, shipped, delivered, cancelled)"
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['pending', 'processing', 'shipped', 'delivered', 'cancelled']
+          
+          - name: amount
+            description: "Total order amount in USD"
+            tests:
+              - not_null
+          
+          - name: event_timestamp
+            description: "Timestamp when the order event occurred"
+            tests:
+              - not_null
+          
+          - name: product_category
+            description: "Primary product category of the order"
+            tests:
+              - not_null
+          
+          - name: ingestion_timestamp
+            description: "Timestamp when the event was ingested into BigQuery"
+          
+          - name: source
+            description: "Data source identifier (streaming, batch)"
