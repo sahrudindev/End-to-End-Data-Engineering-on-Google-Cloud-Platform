@@ -133,11 +133,11 @@ Most data engineering portfolios show toy projects with sample CSVs. This demons
 
 ### Visual Proof of Engineering Excellence
 
-**Automated Data Lineage & Documentation**
+**Production Dashboard - Real Business Analytics**
 
-![dbt Data Lineage Graph](docs/images/dbt_lineage_graph.png)
+![Metabase Analytics Dashboard](docs/images/metabase_demo.webp)
 
-*Auto-generated lineage showing source → staging → marts transformation flow with full dependency tracking*
+*Live interactive dashboard with premium visualizations, real-time metrics, and self-service analytics*
 
 **Production-Grade Incremental Models**
 
