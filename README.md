@@ -139,11 +139,11 @@ Most data engineering portfolios show toy projects with sample CSVs. This demons
 
 *Live interactive dashboard with premium visualizations, real-time metrics, and self-service analytics*
 
-**Production-Grade Incremental Models**
+**Geographic Sales & Distribution Analytics**
 
-![Incremental Fact Table Configuration](docs/images/dbt_fct_orders.png)
+![Geographic Sales Mapping](docs/images/metabase_charts_2.png)
 
-*Incremental processing with partition pruning and merge strategies for cost efficiency*
+*State-level sales visualization with advanced geographic analytics and distribution patterns*
 
 ### Business Impact
 
