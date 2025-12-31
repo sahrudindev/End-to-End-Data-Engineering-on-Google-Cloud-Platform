@@ -24,11 +24,11 @@ Copy these directly into your Resume/CV under "Projects" or "Experience":
 
 Full walkthrough of Metabase with premium visualizations:
 
-![Metabase Premium Demo](file:///C:/Users/fiqri/.gemini/antigravity/brain/4a367373-6797-413f-81ac-255136a65fe0/metabase_screenshots_1767108816324.webp)
+![Metabase Premium Demo](images/metabase_demo.webp)
 
 ### dbt Documentation & Lineage
 
-![dbt Docs Demo](file:///C:/Users/fiqri/.gemini/antigravity/brain/4a367373-6797-413f-81ac-255136a65fe0/dbt_docs_demo_1767106324793.webp)
+![dbt Docs Demo](images/dbt_docs_demo.webp)
 
 ---
 
@@ -36,19 +36,19 @@ Full walkthrough of Metabase with premium visualizations:
 
 ### Overview & Key Metrics
 
-![Dashboard Overview - 18,760 Total Transactions](file:///C:/Users/fiqri/.gemini/antigravity/brain/4a367373-6797-413f-81ac-255136a65fe0/metabase_overview_1767108831715.png)
+![Dashboard Overview - 18,760 Total Transactions](images/metabase_overview.png)
 
 ### Distribution Charts
 
-![Distribution Analysis with Bar and Area Charts](file:///C:/Users/fiqri/.gemini/antigravity/brain/4a367373-6797-413f-81ac-255136a65fe0/metabase_distribution_1767108839845.png)
+![Distribution Analysis with Bar and Area Charts](images/metabase_distribution.png)
 
 ### Geographic & Sales Analytics
 
-![Sales per State Map and Coordinates Visualization](file:///C:/Users/fiqri/.gemini/antigravity/brain/4a367373-6797-413f-81ac-255136a65fe0/metabase_charts_2_1767108847295.png)
+![Sales per State Map and Coordinates Visualization](images/metabase_charts_2.png)
 
 ### Time Series - Orders Over Time
 
-![Orders Seasonality and Trends 2023-2026](file:///C:/Users/fiqri/.gemini/antigravity/brain/4a367373-6797-413f-81ac-255136a65fe0/metabase_orders_over_time_1767109043605.png)
+![Orders Seasonality and Trends 2023-2026](images/metabase_orders_over_time.png)
 
 
 
@@ -58,11 +58,11 @@ Full walkthrough of Metabase with premium visualizations:
 
 ### Data Lineage Graph
 
-![Data Lineage - Source to Marts](file:///C:/Users/fiqri/.gemini/antigravity/brain/4a367373-6797-413f-81ac-255136a65fe0/dbt_lineage_graph_1767106377995.png)
+![Data Lineage - Source to Marts](images/dbt_lineage_graph.png)
 
 ### Incremental Fact Table (fct_orders)
 
-![Incremental Model with Partitioning](file:///C:/Users/fiqri/.gemini/antigravity/brain/4a367373-6797-413f-81ac-255136a65fe0/dbt_model_fct_orders_1767106361812.png)
+![Incremental Model with Partitioning](images/dbt_fct_orders.png)
 
 ---
 
